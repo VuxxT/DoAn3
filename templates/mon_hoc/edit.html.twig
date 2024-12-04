@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sửa Môn Học{% endblock %}
+
+{% block body %}
+    <h1>Cập Nhật Môn Học</h1>
+
+    {{ include('mon_hoc/_form.html.twig', {'button_label': 'Cập Nhật'}) }}
+
+    <button class="btn btn-outline-primary" > <a href="{{ path('app_mon_hoc_index') }}" >Trở Lại</a> </button>
+
+    {{ include('mon_hoc/_delete_form.html.twig') }}
+{% endblock %}

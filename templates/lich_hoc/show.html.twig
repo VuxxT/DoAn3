@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chi Tiết Lịch Học{% endblock %}
+
+{% block body %}
+    <h1>Chi Tiết Lịch Học</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Số Tiết</th>
+                <td>{{ lich_hoc.SoTiet }}</td>
+            </tr>
+            <tr>
+                <th>Ngày Học</th>
+                <td>{{ lich_hoc.Ngay ? lich_hoc.Ngay|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-outline-primary" > <a href="{{ path('app_lich_hoc_index') }}" >Trở Lại</a> </button>
+    <button class="btn btn-outline-primary" > <a href="{{ path('app_lich_hoc_edit', {'id': lich_hoc.id}) }}" >Cập Nhật</a> </button>
+
+    {{ include('lich_hoc/_delete_form.html.twig') }}
+{% endblock %}

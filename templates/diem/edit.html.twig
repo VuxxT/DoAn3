@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sửa Điểm{% endblock %}
+
+{% block body %}
+    <h1>Cập Nhật Điểm</h1>
+
+    {{ include('diem/_form.html.twig', {'button_label': 'Cập Nhật'}) }}
+
+    <button type="button" class="btn btn-outline-primary"><a href="{{ path('app_diem_index') }}" class="nav-link active">Trở Lại</a></button>
+
+    {{ include('diem/_delete_form.html.twig') }}
+{% endblock %}

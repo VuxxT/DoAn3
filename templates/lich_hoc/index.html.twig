@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lịch Học{% endblock %}
+
+{% block body %}
+    <h1>Quản Lý Lịch Học</h1>
+
+    <table class="table">
+        <thead class="table-primary">
+            <tr>
+                <th>Số Tiết</th>
+                <th>Ngày</th>
+                <th>Môn Học</th>
+                <th>Lớp</th>
+                
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lich_hoc in lich_hocs %}
+            <tr>
+                <td>{{ lich_hoc.SoTiet }}</td>
+                <td>{{ lich_hoc.Ngay ? lich_hoc.Ngay|date('Y-m-d') : '' }}</td>
+                <td>{{ lich_hoc.TenMonHoc }}</td>
+                <td>{{ lich_hoc.TenLop }}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-success"><a href="{{ path('app_lich_hoc_show', {'id': lich_hoc.id}) }}" class="nav-link active">Xem Chi Tiết</a></button>
+                        <button type="button" class="btn btn-outline-success"><a href="{{ path('app_lich_hoc_edit', {'id': lich_hoc.id}) }}" class="nav-link active">Sửa</a></button>
+                    </div>
+                     
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Chưa Có Dữ Liệu</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-primary"><a href="{{ path('app_lich_hoc_new') }}" class="nav-link active">Thêm Mới</a></button>
+{% endblock %}

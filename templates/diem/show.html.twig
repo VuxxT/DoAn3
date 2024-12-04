@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Điểm{% endblock %}
+
+{% block body %}
+    <h3>Chi Tiết Điểm Học Sinh : {{ diem.TenHS }} </h3>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Học Kỳ</th>
+                <td>{{ diem.TenHK }}</td>
+            </tr>
+            <tr>
+                <th>Môn Học</th>
+                <td>{{ diem.TenMonHoc }}</td>
+            </tr>
+            <tr>
+                <th>Điểm Trả Bài</th>
+                <td>{{ diem.DiemTraBai }}</td>
+            </tr>
+            <tr>
+                <th>Điểm Kiểm Tra 15 Phút</th>
+                <td>{{ diem.DiemKtra15phut }}</td>
+            </tr>
+            <tr>
+                <th>Điểm Kiểm Tra 1 Tiết</th>
+                <td>{{ diem.DiemKtra1tiet }}</td>
+            </tr>
+            <tr>
+                <th>Điểm Thi</th>
+                <td>{{ diem.DiemThi }}</td>
+            </tr>
+            <tr>
+                <th>Điểm Trung Bình</th>
+                <td>{{ diem.DiemTB }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-outline-primary" > <a href="{{ path('app_diem_index') }}" >Trở Lại</a> </button>
+    <button class="btn btn-outline-primary" > <a href="{{ path('app_diem_edit', {'id': diem.id}) }}" >Cập Nhật</a> </button>
+
+    {{ include('diem/_delete_form.html.twig') }}
+{% endblock %}

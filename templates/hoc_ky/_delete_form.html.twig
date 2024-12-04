@@ -1,0 +1,4 @@
+<form method="post" action="{{ path('app_hoc_ky_delete', {'id': hoc_ky.id}) }}" onsubmit="return confirm('Bạn Chắc Chắn Muốn Xóa Nó Chứ?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ hoc_ky.id) }}">
+    <button class="btn btn-danger">Xóa</button>
+</form>

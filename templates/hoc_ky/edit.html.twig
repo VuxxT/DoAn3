@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sửa Học Kỳ{% endblock %}
+
+{% block body %}
+    <h1>Cập Nhật Học Kỳ</h1>
+
+    {{ include('hoc_ky/_form.html.twig', {'button_label': 'Cập Nhật'}) }}
+
+    <button type="button" class="btn btn-outline-primary"><a href="{{ path('app_hoc_ky_index') }}" class="nav-link active">Trở Lại</a></button>
+
+    {{ include('hoc_ky/_delete_form.html.twig') }}
+{% endblock %}

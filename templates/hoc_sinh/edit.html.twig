@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cập Nhật Thông Tin Học Sinh{% endblock %}
+
+{% block body %}
+    <h1>Cập Nhật Thông Tin Học Sinh</h1>
+
+    {{ include('hoc_sinh/_form.html.twig', {'button_label': 'Cập Nhật'}) }}
+
+    <button type="button" class="btn btn-outline-primary"><a href="{{ path('app_hoc_sinh_index') }}" class="nav-link active">Trở Lại</a></button>
+
+    {{ include('hoc_sinh/_delete_form.html.twig') }}
+{% endblock %}

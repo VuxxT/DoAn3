@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Thêm Điểm{% endblock %}
+
+{% block body %}
+    <h1>Thêm Điểm Mới</h1>
+
+    {{ include('diem/_form.html.twig') }}
+
+    <button class="btn btn-outline-primary" > <a href="{{ path('app_diem_index') }}" >Trở Lại</a> </button>
+{% endblock %}

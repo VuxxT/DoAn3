@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Học Sinh Mới{% endblock %}
+
+{% block body %}
+    <h1>Tạo Thông Tin Học Sinh</h1>
+
+    {{ include('hoc_sinh/_form.html.twig') }}
+
+    <button class="btn btn-outline-primary" > <a href="{{ path('app_hoc_sinh_index') }}" >Trở Lại</a> </button>
+{% endblock %}

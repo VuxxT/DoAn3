@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quản Lý Học Kỳ{% endblock %}
+
+{% block body %}
+    <h1>Quản Lý Học Kỳ</h1>
+
+    <table class="table">
+        <thead class="table-primary">
+            <tr>
+                <th>Tên Học Kỳ</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for hoc_ky in hoc_kies %}
+            <tr>
+                <td>{{ hoc_ky.TenHK }}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-success"><a href="{{ path('app_hoc_ky_show', {'id': hoc_ky.id}) }}" class="nav-link active">Xem Chi Tiết</a></button>
+                        <button type="button" class="btn btn-outline-success"><a href="{{ path('app_hoc_ky_edit', {'id': hoc_ky.id}) }}" class="nav-link active">Sửa</a></button>
+                     </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Chưa Có Thông Tin</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary"><a href="{{ path('app_hoc_ky_new') }}" class="nav-link active">Thêm Mới</a></button>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Chi Tiết Học Kỳ{% endblock %}
+
+{% block body %}
+    <h1>Chi Tiết Học Kỳ</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Học Kỳ</th>
+                <td>{{ hoc_ky.TenHK }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-outline-primary"><a href="{{ path('app_hoc_ky_index') }}" class="nav-link active">Trở Lại</a></button>
+    <button type="button" class="btn btn-outline-primary"><a href="{{ path('app_hoc_ky_edit', {'id': hoc_ky.id}) }}" class="nav-link active">Cập Nhật</a></button>
+
+
+    {{ include('hoc_ky/_delete_form.html.twig') }}
+{% endblock %}

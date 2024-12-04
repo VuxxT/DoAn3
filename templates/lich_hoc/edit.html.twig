@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Cập Nhật Lịch Học{% endblock %}
+
+{% block body %}
+    <h1>Cập Nhật Lịch Học</h1>
+
+    {{ include('lich_hoc/_form.html.twig', {'button_label': 'Cập Nhật'}) }}
+
+    <a href="{{ path('app_lich_hoc_index') }}">Trở Lại</a>
+
+    {{ include('lich_hoc/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quản Lý Điểm{% endblock %}
+
+{% block body %}
+    <h1>Quản Lý Điểm</h1>
+
+    <table class="table">
+        <thead class="table-primary">
+            <tr>
+                <th>Tên Học Sinh </th>
+                <th>Môn Học</th>
+                <th>Học Kỳ</th>
+                <th>Điểm Trả Bài </th>
+                <th>Điểm Kiểm Tra 15 Phút</th>
+                <th>Điểm Kiểm Tra 1 Tiết</th>
+                <th>Điểm Thi</th>
+                <th>Điểm Trung Binh</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for diem in diems %}
+            <tr>
+                <td>{{ diem.TenHS }}</td>
+                <td>{{ diem.TenMonHoc }}</td>
+                <td>{{ diem.TenHK }}</td>
+                <td>{{ diem.DiemTraBai }}</td>
+                <td>{{ diem.DiemKtra15phut }}</td>
+                <td>{{ diem.DiemKtra1tiet }}</td>
+                <td>{{ diem.DiemThi }}</td>
+                <td>{{ diem.DiemTb }}</td>
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-outline-success"><a href="{{ path('app_diem_show', {'id': diem.id}) }}" class="nav-link active">Xem Chi Tiết</a></button>
+                        <button type="button" class="btn btn-outline-success"><a href="{{ path('app_diem_edit', {'id': diem.id}) }}" class="nav-link active">Sửa</a></button>
+                     </div>
+                </td>
+            </tr>
+            {% else %}
+            <tr>
+                <td colspan="7">Chưa Có Dữ Liệu</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <button type="button" class="btn btn-primary"><a href="{{ path('app_diem_new') }}" class="nav-link active">Thêm Mới</a></button>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CT Lớp{% endblock %}
+
+{% block body %}
+    <h1>Chi Tiết Lớp</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Tên Lớp</th>
+                <td>{{ lop.TenLop }}</td>
+            </tr>
+            <tr>
+                <th>Sỉ Số</th>
+                <td>{{ lop.SiSo }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button class="btn btn-outline-primary" > <a href="{{ path('app_lop_index') }}" >Trở Lại</a> </button> 
+    <button class="btn btn-outline-primary" > <a href="{{ path('app_lop_edit', {'id': lop.id}) }}" >Cập Nhật</a> </button>
+
+
+    {{ include('lop/_delete_form.html.twig') }}
+{% endblock %}

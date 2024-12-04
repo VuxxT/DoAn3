@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sửa Lớp{% endblock %}
+
+{% block body %}
+    <h1>Cập Nhật Thông Tin Lớp</h1>
+
+    {{ include('lop/_form.html.twig', {'button_label': 'Cập Nhật'}) }}
+
+    <button class="btn btn-outline-primary" > <a href="{{ path('app_lop_index') }}" >Trở Lại</a> </button>
+
+    {{ include('lop/_delete_form.html.twig') }}
+{% endblock %}

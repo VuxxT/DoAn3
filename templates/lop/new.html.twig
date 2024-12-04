@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tạo Lớp Mới{% endblock %}
+
+{% block body %}
+    <h1>Tạo Lớp Mới</h1>
+
+    {{ include('lop/_form.html.twig') }}
+
+    <button class="btn btn-outline-primary" > <a href="{{ path('app_lop_index') }}" >Trở Lại</a> </button>
+{% endblock %}
